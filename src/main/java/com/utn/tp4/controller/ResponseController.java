@@ -23,13 +23,13 @@ public class ResponseController {
     @Autowired
     private ResponseService userService;
 
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/hi", method = RequestMethod.POST)
     public String responseDetails() {
         return "HELOCLIENT";
     }
 
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll", method = RequestMethod.POST)
     public ResponseEntity<List<?>> getAll() {
         try {
             return new ResponseEntity<List<?>>(userService.getResponses(), HttpStatus.OK);
@@ -38,7 +38,7 @@ public class ResponseController {
         }
     }
 
-    @RequestMapping(value = "/getPopularBrowser", method = RequestMethod.GET)
+    @RequestMapping(value = "/getPopularBrowser", method = RequestMethod.POST)
     public ResponseEntity<List<?>> getPopularBrowser() {
         try {
             return new ResponseEntity<List<?>>(userService.getPopularBrowser(), HttpStatus.OK);
@@ -47,7 +47,7 @@ public class ResponseController {
         }
     }
 
-    @RequestMapping(value = "/getPopularSo", method = RequestMethod.GET)
+    @RequestMapping(value = "/getPopularSo", method = RequestMethod.POST)
     public ResponseEntity<List<?>> getPopularSo() {
         try {
             return new ResponseEntity<List<?>>(userService.getPopularSo(), HttpStatus.OK);
@@ -56,7 +56,7 @@ public class ResponseController {
         }
     }
 
-    @RequestMapping(value = "/getCombination", method = RequestMethod.GET)
+    @RequestMapping(value = "/getCombination", method = RequestMethod.POST)
     public ResponseEntity<List<?>> getCombination() {
         try {
             return new ResponseEntity<List<?>>(userService.getPopularCombination(), HttpStatus.OK);
